@@ -75,7 +75,7 @@ export default function TextForm(props) {
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
-            className={`form-control placeholder-${props.mode} === "light" ? "black" : "white"`}
+            className={`form-control placeholder-${props.mode}`}
             id="myBox"
             rows="8"
             placeholder="Enter text here"
@@ -87,25 +87,34 @@ export default function TextForm(props) {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={convertTextToUpperCase}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={convertTextToUpperCase}
+        >
           Convert to Uppercase
         </button>
         <button
-          className="btn btn-primary mx-2"
+          className="btn btn-primary mx-1 my-1"
           onClick={convertTextToLowerCase}
         >
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary" onClick={convertTextToProperCase}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={convertTextToProperCase}
+        >
           Convert to Propercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={removeExtraSpace}>
+        <button
+          className="btn btn-primary mx-1 my-1"
+          onClick={removeExtraSpace}
+        >
           Remove Extra Space
         </button>
-        <button className="btn btn-primary" onClick={copyToClipboard}>
+        <button className="btn btn-primary mx-1 my-1" onClick={copyToClipboard}>
           Copy To Clipboard
         </button>
-        <button className="btn btn-secondary mx-2" onClick={resetText}>
+        <button className="btn btn-secondary mx-1 my-1" onClick={resetText}>
           Reset
         </button>
       </div>
@@ -125,11 +134,7 @@ export default function TextForm(props) {
           minutes read
         </p>
         <h2>Preview</h2>
-        <p>
-          {text.length > 0
-            ? text
-            : "Enter something in the above textbox to preview it here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to preview"}</p>
       </div>
     </>
   );
